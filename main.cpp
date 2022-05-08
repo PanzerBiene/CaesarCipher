@@ -6,24 +6,28 @@ int main() {
 }
 void printMenu()
 {
-    int choice = 0;
-    std::cout << "\t\t Ceasar Cipher \n";
-    std::cout << "chose and option: \n1. enter text in command line \n2. enter text through file\n";
+    while(true)
+    {
+        int choice = 0;
+        std::cout << "Ceasar Cipher \n";
+        std::cout << "chose and option: \n1. enter text in command line \n2. enter text through file\n";
 
-    std::cin >> choice;
+        std::cin >> choice;
 
-    if (choice == 1)
-    {
-        CommandLineCipher();
+        if (choice == 1)
+        {
+            CommandLineCipher();
+        }
+        else if (choice == 2)
+        {
+            FileCipher();
+        }
+        else
+        {
+            std::cout << "Invalid option try again" << std::endl;
+        }
     }
-    else if (choice == 2)
-    {
-        FileCipher();
-    }
-    else
-    {
-        printMenu();
-    }
+
 }
 
 
