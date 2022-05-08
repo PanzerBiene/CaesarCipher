@@ -6,7 +6,7 @@
 #define CEASARCIPHER_MAIN_H
 #include <iostream>
 #include <fstream>
-
+#include "Cipher.h"
 
 void printMenu();
 

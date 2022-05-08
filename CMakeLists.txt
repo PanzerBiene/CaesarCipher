@@ -3,4 +3,4 @@ project(CeasarCipher)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(CeasarCipher main.cpp cipher.cpp cipher.h main.h)
+add_executable(CeasarCipher main.cpp Cipher.cpp Cipher.h main.h)
