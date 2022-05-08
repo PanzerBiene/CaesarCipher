@@ -11,7 +11,6 @@ Cipher::Cipher(int key)
 
 void Cipher::setKey(int key)
 {
-    std::cout << "setkey " << key << std::endl;
     this->key = key % 26;
 }
 
@@ -29,24 +28,16 @@ std::string Cipher::Encrypt(std::string plainText) {
         char cipherChar;
 
         int key = getKey();
-        std::cout << "key" << key << std::endl;
-        //check if character is a space
-        if (plainChar == ' ')
+        //check if character is a space or if character is a number
+        if (plainChar == ' ' || std::isdigit(plainChar))
         {
-            cipherChar = ' ';
-        }
-        //check if character is a number
-        else if (std::isdigit(plainChar))
-        {
-            cipherChar = plainChar;
+            cipherText += plainChar;
         }
         else
         {
             //get ascii value of char
             int charValue = int(plainChar);
-            std::cout <<"before" << charValue << std::endl;
             charValue = charValue + key;
-            std::cout << "after" << charValue << std::endl;
             cipherChar = char(charValue);
             //add char to cipherText
             cipherText += cipherChar;
@@ -67,25 +58,17 @@ std::string Cipher::Decrypt(std::string cipherText)
         char plainChar;
 
         int key = getKey();
-        std::cout << "key" << key << std::endl;
-        //check if character is a space
-        if (cipherChar == ' ')
+        //check if character is a space or if character is a number
+        if (cipherChar == ' ' || std::isdigit(cipherChar))
         {
-            plainChar = ' ';
-        }
-            //check if character is a number
-        else if (std::isdigit(cipherChar))
-        {
-            plainChar = cipherChar;
+            plainText += cipherChar;
         }
         else
         {
             //get ascii value of char
             int charValue = int(cipherChar);
 
-            std::cout <<"before" << charValue << std::endl;
             charValue = charValue - key;
-            std::cout << "after" << charValue << std::endl;
             plainChar = char(charValue);
             //add char to cipherText
             plainText += plainChar;

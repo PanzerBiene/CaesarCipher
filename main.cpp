@@ -55,7 +55,21 @@ int main() {
         }
         else if (choice == 3)
         {
+            //get file name
             std::string fileName = InputFileName();
+            //read text from file
+            std::string cipherText = ReadFile(fileName);
+
+            //decrypt text using ceasar Cipher
+            std::string plainText = BruteForce(cipherText);
+
+            std::cout << "Text encrypted enter file to save plain text";
+
+            //get file for text to be saved to
+            std::string saveFileName = InputFileName();
+
+            //write data to file
+            WriteFile(plainText, saveFileName);
         }
         else
         {
@@ -149,5 +163,26 @@ std::string Encrypt(std::string plainText)
 
 std::string BruteForce(std::string cipherText)
 {
+    std::string attempts[26];
+    Cipher cipher(0);
+
+    for (int i = 0; i < 26; ++i)
+    {
+        int key = i;
+
+        cipher.setKey(key);
+
+        std::string attempt = cipher.Decrypt(cipherText);
+
+        std::cout << "Key: " << key << " Text: " << attempt << std::endl;
+        attempts[i] = attempt;
+    }
+
+    std::cout << "enter the key of the most readable text" << std::endl;
+
+    int chosen;
+    std::cin >> chosen;
+
+    return attempts[chosen];
 
 }
