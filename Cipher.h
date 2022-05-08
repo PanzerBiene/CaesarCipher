@@ -1,9 +1,5 @@
-//
-// Created by brandon on 8/5/22.
-//
-
-#ifndef CEASARCIPHER_CIPHER_H
-#define CEASARCIPHER_CIPHER_H
+#ifndef CAESARCIPHER_CIPHER_H
+#define CAESARCIPHER_CIPHER_H
 #include <iostream>
 
 class Cipher
@@ -20,4 +16,4 @@ private:
 };
 
 
-#endif //CEASARCIPHER_CIPHER_H
+#endif //CAESARCIPHER_CIPHER_H

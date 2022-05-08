@@ -1,9 +1,5 @@
-//
-// Created by brandon on 8/5/22.
-//
-
-#ifndef CEASARCIPHER_MAIN_H
-#define CEASARCIPHER_MAIN_H
+#ifndef CAESARCIPHER_MAIN_H
+#define CAESARCIPHER_MAIN_H
 #include <iostream>
 #include <fstream>
 #include "Cipher.h"
@@ -20,4 +16,4 @@ std::string Decrypt(std::string cipherText);
 std::string Encrypt(std::string plainText);
 std::string BruteForce(std::string cipherText);
 
-#endif //CEASARCIPHER_MAIN_H
+#endif //CAESARCIPHER_MAIN_H

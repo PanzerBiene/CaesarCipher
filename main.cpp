@@ -36,9 +36,9 @@ void printMenu()
     int choice = 0;
     while(true) {
         std::cout << "Please select and option: \n";
-        std::cout << "1. Ceasar Cipher encrypt\n";
-        std::cout << "2. Ceasar Cipher decrypt\n";
-        std::cout << "3. Ceasar Cipher brute force\n";
+        std::cout << "1. Caesar Cipher encrypt\n";
+        std::cout << "2. Caesar Cipher decrypt\n";
+        std::cout << "3. Caesar Cipher brute force\n";
 
         std::cin >> choice;
         if (choice == 1) {
@@ -81,9 +81,9 @@ void printMenu()
     while(true)
     {
         std::cout << "Please select and option: \n";
-        std::cout << "1. Ceasar Cipher encrypt\n";
-        std::cout << "2. Ceasar Cipher decrypt\n";
-        std::cout << "3. Ceasar Cipher brute force\n";
+        std::cout << "1. Caesar Cipher encrypt\n";
+        std::cout << "2. Caesar Cipher decrypt\n";
+        std::cout << "3. Caesar Cipher brute force\n";
 
         std::cin >> choice;
         if (choice == 1)

@@ -1,7 +1,3 @@
-//
-// Created by brandon on 8/5/22.
-//
-
 #include "Cipher.h"
 
 Cipher::Cipher(int key)
