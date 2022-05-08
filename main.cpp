@@ -4,10 +4,43 @@ int main() {
     printMenu();
     return 0;
 }
-
-[[noreturn]] void printMenu()
+void printMenu()
 {
+    int choice = 0;
+    std::cout << "\t\t Ceasar Cipher \n";
+    std::cout << "chose and option: \n1. enter text in command line \n2. enter text through file\n";
 
+    std::cin >> choice;
+
+    if (choice == 1)
+    {
+        CommandLineCipher();
+    }
+    else if (choice == 2)
+    {
+        FileCipher();
+    }
+    else
+    {
+        printMenu();
+    }
+}
+
+
+[[noreturn]] void CommandLineCipher()
+{
+    /**
+     * CommandLineCipher is used for encrypting/decrypting text inputted through the command line
+     */
+
+
+}
+
+[[noreturn]] void FileCipher()
+{
+    /**
+     * FileCipher is used for encrypting/decrypting files
+     */
     int choice = 0;
     while(true)
     {
