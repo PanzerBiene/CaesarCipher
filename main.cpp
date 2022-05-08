@@ -33,7 +33,43 @@ void printMenu()
      * CommandLineCipher is used for encrypting/decrypting text inputted through the command line
      */
 
+    int choice = 0;
+    while(true) {
+        std::cout << "Please select and option: \n";
+        std::cout << "1. Ceasar Cipher encrypt\n";
+        std::cout << "2. Ceasar Cipher decrypt\n";
+        std::cout << "3. Ceasar Cipher brute force\n";
 
+        std::cin >> choice;
+        if (choice == 1) {
+            std::string plainText = "";
+
+            std::cout << "Enter text to be encrypted: \n";
+            std::cin >> plainText;
+
+            std::string cipherText = Encrypt(plainText);
+
+            std::cout << "Encrypted Text: " << cipherText << "\n\n";
+        } else if (choice == 2) {
+            std::string cipherText = "";
+
+            std::cout << "Enter text to be decrypted: \n";
+            std::cin >> cipherText;
+
+            std::string plainText = Decrypt(cipherText);
+            std::cout << "Decrypted Text: " << plainText << "\n\n";
+        } else if (choice == 3) {
+            std::string cipherText = "";
+
+            std::cout << "Enter text to be decrypted: \n";
+            std::cin >> cipherText;
+
+            std::string plainText = BruteForce(cipherText);
+            std::cout << "Decrypted Text: " << plainText << "\n\n";
+        } else {
+            std::cout << "Invalid choice, please try again" << "\n\n";
+        }
+    }
 }
 
 [[noreturn]] void FileCipher()
