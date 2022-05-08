@@ -14,7 +14,7 @@ public:
     int getKey();
 
     std::string Encrypt(std::string plainText);
-
+    std::string Decrypt(std::string cipherText);
 private:
     int key = 0;
 };

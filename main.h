@@ -8,7 +8,7 @@
 #include <fstream>
 #include "Cipher.h"
 
-void printMenu();
+[[noreturn]] void printMenu();
 
 std::string InputFileName();
 void WriteFile(std::string text, std::string fileName);

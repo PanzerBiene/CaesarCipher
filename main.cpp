@@ -5,11 +5,11 @@ int main() {
     return 0;
 }
 
-void printMenu()
+[[noreturn]] void printMenu()
 {
 
     int choice = 0;
-    while(choice < 1 || choice >3)
+    while(true)
     {
         std::cout << "Please select and option: \n";
         std::cout << "1. Ceasar Cipher encrypt\n";
@@ -37,7 +37,21 @@ void printMenu()
         }
         else if (choice == 2)
         {
+            //get file name
             std::string fileName = InputFileName();
+            //read text from file
+            std::string cipherText = ReadFile(fileName);
+
+            //decrypt text using ceasar Cipher
+            std::string plainText = Decrypt(cipherText);
+
+            std::cout << "Text encrypted enter file to save plain text";
+
+            //get file for text to be saved to
+            std::string saveFileName = InputFileName();
+
+            //write data to file
+            WriteFile(plainText, saveFileName);
         }
         else if (choice == 3)
         {
@@ -75,6 +89,7 @@ void WriteFile(std::string text, std::string fileName)
         std::cout << "Error opening file";
         exit(0);
     }
+    file.close();
 }
 
 std::string ReadFile(std::string fileName)
@@ -100,12 +115,22 @@ std::string ReadFile(std::string fileName)
         std::cout << "Error opening file";
         exit(0);
     }
+    file.close();
     return text;
 }
 
 std::string Decrypt(std::string cipherText)
 {
+    int key = 0;
+    std::cout << "please enter Cipher key: ";
+    std::cin >> key;
 
+    //create instance of Cipher
+    Cipher cipher(key);
+
+    //decrypt the cipherText
+    std::string plainText = cipher.Decrypt(cipherText);
+    return plainText;
 }
 
 std::string Encrypt(std::string plainText)

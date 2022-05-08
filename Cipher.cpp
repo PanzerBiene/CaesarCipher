@@ -55,3 +55,42 @@ std::string Cipher::Encrypt(std::string plainText) {
 
     return cipherText;
 }
+
+std::string Cipher::Decrypt(std::string cipherText)
+{
+    std::string plainText = "";
+
+    //loop over characters in plaintext
+    for (int i = 0; i < cipherText.size(); ++i)
+    {
+        char cipherChar = tolower(cipherText[i]);
+        char plainChar;
+
+        int key = getKey();
+        std::cout << "key" << key << std::endl;
+        //check if character is a space
+        if (cipherChar == ' ')
+        {
+            plainChar = ' ';
+        }
+            //check if character is a number
+        else if (std::isdigit(cipherChar))
+        {
+            plainChar = cipherChar;
+        }
+        else
+        {
+            //get ascii value of char
+            int charValue = int(cipherChar);
+
+            std::cout <<"before" << charValue << std::endl;
+            charValue = charValue - key;
+            std::cout << "after" << charValue << std::endl;
+            plainChar = char(charValue);
+            //add char to cipherText
+            plainText += plainChar;
+        }
+    }
+
+    return plainText;
+}
